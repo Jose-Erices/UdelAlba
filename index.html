@@ -23,7 +23,7 @@
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 650px;
+      max-width: 600px;
       padding: 30px 25px 20px;
       box-sizing: border-box;
     }
@@ -32,8 +32,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
       flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .header-left h1 {
@@ -47,8 +47,14 @@
       color: #666;
     }
 
+    .logo-container {
+      text-align: center;
+      margin: 15px 0;
+      width: 100%;
+    }
+
     .logo-container img {
-      height: 60px;
+      height: 70px;
       width: auto;
     }
 
@@ -56,7 +62,16 @@
       font-size: 15px;
       color: #333;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .vigencia {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 15px;
+      text-align: center;
+      font-style: italic;
     }
 
     .info {
@@ -65,19 +80,33 @@
       background-color: #f9f9f9;
       padding: 15px 20px;
       border-radius: 8px;
-      line-height: 1.6;
       border: 1px solid #e0e0e0;
     }
 
-    .info p {
-      margin: 6px 0;
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 6px;
     }
 
-    .info span {
+    .info-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .info-row span {
       font-weight: bold;
-      color: #222;
-      display: inline-block;
-      width: 120px;
+      color: #333;
+      width: 30%;
+      min-width: 100px;
+    }
+
+    .info-row div {
+      width: 70%;
+      text-align: right;
+      word-break: break-word;
     }
 
     .btn-cerrar {
@@ -101,20 +130,24 @@
     @media screen and (max-width: 500px) {
       .cert-container {
         padding: 20px;
+        margin: 10px;
       }
 
       .header-left h1 {
         font-size: 18px;
       }
 
-      .logo-container {
-        margin-top: 10px;
-        text-align: center;
-        width: 100%;
+      .logo-container img {
+        height: 60px;
       }
 
-      .logo-container img {
-        height: 50px;
+      .info-row {
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .info-row div {
+        text-align: left;
       }
 
       .btn-cerrar {
@@ -131,28 +164,33 @@
         <h1>Certificado de Alumno Regular</h1>
         <small>Emitido el día <strong>11/06/2025</strong></small>
       </div>
-      <div class="logo-container">
-       <img src="./logo/logoudelalba.png" alt="Logo Universidad del Alba">
-      </div>
+    </div>
+
+    <div class="logo-container">
+      <img src="./logo/logoudelalba.png" alt="Logo Universidad del Alba">
     </div>
 
     <div class="body-text">
       Se certifica que el siguiente código corresponde a un documento oficial de la Universidad del Alba. A continuación se detallan los datos verificados:
     </div>
 
-    <div class="info">
-      <p><span>RUT:</span> 16.980.095-2</p>
-      <p><span>Nombre:</span> JOSE ANTONIO ERICES GONZÁLEZ</p>
-      <p><span>Carrera:</span> INGENIERÍA COMERCIAL ADVANCE</p>
-      <p><span>Finalidad:</span> Los fines que estime conveniente</p>
+    <div class="vigencia">
+      Este certificado tiene una validez de 30 días desde la fecha de emisión.
     </div>
 
-    <button class="btn-cerrar" onclick="cerrarPopup()">Cerrar</button>
+    <div class="info">
+      <div class="info-row"><span>RUT:</span><div>16.980.095-2</div></div>
+      <div class="info-row"><span>Nombre:</span><div>JOSE ANTONIO ERICES GONZÁLEZ</div></div>
+      <div class="info-row"><span>Carrera:</span><div>INGENIERÍA COMERCIAL ADVANCE</div></div>
+      <div class="info-row"><span>Finalidad:</span><div>Los fines que estime conveniente</div></div>
+    </div>
+
+    <button class="btn-cerrar" onclick="cerrarPopup()">Ir al Home</button>
   </div>
 
   <script>
     function cerrarPopup() {
-      window.location.href = "https://www.udalba.cl/";
+      window.location.href = "https://jose-erices.github.io/UdelAlba/";
     }
   </script>
 
